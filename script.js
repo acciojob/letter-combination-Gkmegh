@@ -9,16 +9,16 @@ function letterCombinations(input_digit) {
       "8": "tvu",
       "9": "wxyz"
   }
-  let ans =[];
+  let solutions = [];
   
   function solve (currentIndex, calculatedString){
       if(input_digit.length <= currentIndex){
-          ans.push(calculatedString);
+          solutions.push(calculatedString);
           return;
       }
       let currentchar = input_digit[currentIndex];
       for(let i =0; i < table[currentchar].length ; i++){
-          solve( currentaIndex+1 , calculatedString + table[currentchar])
+          solve( currentIndex + 1 , calculatedString + table[currentchar][i])
       }
   }
   solve(0,"")
